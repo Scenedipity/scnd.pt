@@ -1,0 +1,63 @@
+body {background:white;margin:auto;overflow:auto;padding:6px;min-width: 480px; max-width:1024px}
+#footer, #toplinks {float:left;padding: 2px;text-align: left;width:100%}
+.fb_reset{float:left; clear:both}
+a{font-size: small;text-decoration:none; color:#0Fa6C5; margin:0 3px}
+a:hover{text-decoration:underline}
+
+#toplinks .city{float:left;margin:5px 0 0 0;line-height:25px;; font-size:25px; color:#666}
+#toplinks .theScene{float:left; clear:both}
+#toplinks .theScene h1{float:left;clear:both;line-height:60px;margin:-18px 0 0 0;font-size:60px; color:#222}
+#toplinks .theScene h1 a{font-size:65px;text-decoration:none;}
+#toplinks .theScene h1 a:hover{text-decoration:underline;}
+#toplinks .sketch {float:right;clear:left;font-size:26px;font-family:'Cabin Sketch'; color:#0fa6c5; text-align:center;}
+#toplinks .beta{color:red;font-size:small}
+#toplinks a{float:left;}
+#footer ul{margin:auto 0}
+#footer ul li{clear:none;display:inline; list-style:none; padding:0 5px; margin:auto 0}
+.bannerLeft{float:left; clear:left;}
+
+p{font-family: 'Helvetica Neue', helvetica, arial, sans-serif;}
+p>a{font-size:inherit}
+pre{background-color: #EEE;
+padding: 8px;
+overflow: auto}
+.message {font-family: 'Helvetica Neue', helvetica, arial, sans-serif;float:left; clear:both;color:#666;font-size:14px;font-style:bold; width:100%;margin:30px auto; clear:both; text-align:center; line-height:20px; overflow:auto;padding:10px 0; color:#333;border:solid 1px #0Fa6c5;-moz-box-shadow: rgba(0, 0, 0, .33) 0 0 5px;-webkit-box-shadow: rgba(0, 0, 0, .33) 0 0 5px;box-shadow: rgba(0, 0, 0, .33) 0 0 5px;}
+.message a{color:#3C3CFF;font-size:9pt;}
+.message a:hover{color:#3C3CFF;font-size:9pt; text-decoration:underline;}
+.message.yellow{background:#FCF9CF;border:solid 1px #DEDEDE;color:#797965;}
+.message.green,#me{border:solid 1px #359545; background:#CEE6C3;;}
+.message.grey{border:solid 1px #DEDEDE; background:#EFEFEF;color:#222222;}
+.message.red{border:solid 1px #CB2026; background:#F6CBCA;color:#CA2026;}
+#text{line-height:22px; height:44px; font-size:20px;
+	font-family:Helvetica; font-weight:normal;
+	font-size:18px;}
+ .counter{
+	font-family:Helvetica;
+	font-size:20px;
+	color:#ccc;
+	}
+ .warning{color:#333;}	
+ .exceeded{color:#e00;}
+ 
+ 	
+#footer {font-family: 'Helvetica Neue', helvetica, arial, sans-serif;text-align: center;clear: both; font-size: small; color:#555}
+#footer ul{margin:auto; padding:0}
+
+/*------------------------------------*\
+	iPhone && Android Specific
+\*------------------------------------*/
+@media screen and (max-device-width: 720px){
+	html{max-width:98%;width:98%; padding:1%; margin:0}
+	body{padding: 0; margin:0; max-width:100%;width:100%;}
+	#toplinks{float:left; clear:both;margin:0;padding:0; width:100%}
+	#toplinks .city{line-height:8px; font-size:12px; }
+	#toplinks .theScene h1{line-height:20px;margin:-6px 0 0 0;font-size:20px;}
+	#toplinks .sketch{text-indent:40px; float:left; line-height:14px;font-size:12px;text-align:left;width:100% }
+	#toplinks .beta{font-size:6px}
+	#toplinks .theScene h1 a{line-height:26px;font-size:30px;text-decoration:none;}
+	.bannerLeft{float:left; clear:left; width:50%; padding:0; margin:0}
+	.bannerRight{float:left; clear:right; width:50%; padding:0; margin:0; overflow:auto}
+	#footer, #footer ul a{width:100%;font-size: xx-small}
+	.left,.form{width:90%;margin:0 5% ;padding:0;border:none;float:left}
+	.left *, .form *{width:100%; float:left; text-align:left;overflow:auto}
+	}/*--- iPhone only CSS here ---*/

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/project_scene/!svn/ver/1/WEB-INF/lib
+END
+jsp-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/jsp-api.jar
+END
+commons-digester.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-digester.jar
+END
+mysql-connector-java-5.1.5-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/mysql-connector-java-5.1.5-bin.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-codec-1.3.jar
+END
+commons-lang-2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-lang-2.1.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-beanutils.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-logging-1.1.1.jar
+END
+tomahawk-1.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/tomahawk-1.1.3.jar
+END
+javax.servlet_2.4.0.v200806031604.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/javax.servlet_2.4.0.v200806031604.jar
+END
+jstl-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/jstl-1.2.jar
+END
+urlrewrite-3.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/urlrewrite-3.2.0.jar
+END
+jsf-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/jsf-api.jar
+END
+jasper-runtime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/jasper-runtime.jar
+END
+commons-el.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-el.jar
+END
+jsf-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/jsf-impl.jar
+END
+commons-collections.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/commons-collections.jar
+END
+servlet-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/project_scene/!svn/ver/1/WEB-INF/lib/servlet-api.jar
+END
