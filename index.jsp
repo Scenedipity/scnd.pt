@@ -41,6 +41,30 @@ z - reserved
 String url = request.getParameter("view");
 String id = request.getParameter("id");
 
+%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
+	%><html xmlns="http://www.w3.org/1999/xhtml"><%
+		%><head><%
+			%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
+			%><title>scenedipity's url shortener</title><%
+			%><script type="text/javascript"><%
+ 				 %>var _gaq = _gaq || [];<%
+ 				 %>(function() {<%
+ 					 %>var ga = document.createElement('script');<%
+ 					 %>ga.type = 'text/javascript'; ga.async = true;<%
+ 					 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
+ 					 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
+				 %>})();<%
+				 
+				 %>function forward(url){<%
+					 %>_gaq.push(['_trackPageview', url]);<%
+					 %>window.location = "http://www.scenedipity.com"+url;<%
+				 %>}<%
+				 
+				 %>function forwardBlog(url){<%
+					 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
+					 %>window.location = "http://blog.scenedipity.com"+url;<%
+				 %>}<%
+	
 if(url.length()>0){ // --- begin translation---------------------------------------------------------------------------------------
 	
 	%><%! // --- Functions ---------------------------------------------------v
@@ -90,46 +114,34 @@ if(url.length()>0){ // --- begin translation------------------------------------
 		if(temp.getDate()<10)toReturn+="0";
 		return toReturn + temp.getDate()+"-"+(temp.getYear()-100);		
 			}
-	
 	%><%//--------------------------------------------------------------------^
 
-	if(check(url, "foodtrucks") || check(url,"streets"))
-		response.sendRedirect("http://www.scenedipity.com/foodtrucks");
+	if(check(url, "foodtrucks") || check(url,"streets")){
+		%>forward("/foodtrucks");<%
 	
-	else if(check(url, "g")){
-		response.sendRedirect("http://www.scenedipity.com/where-is/"+
-					expand(id.substring(3,6))+
-					"/"+translate(
-						Long.parseLong(
-							expand(
-								id.substring(0,3)
-							))));
+	}else if(check(url, "g")){
+			%>forward("/where-is/"+"<%=expand(id.substring(3,6))+
+						"/"+translate(
+							Long.parseLong(
+								expand(
+									id.substring(0,3)
+								)
+							)
+						)%>"<%
+			%>);<%
+	
+	}else if(check(url,"b")){
+		%>forwardBlog("/?p="+"<%=id%>");<%
+	}else{
+		%>forward("/"+"<%=url%>");<%
 	}
-	else if(check(url,"b"))
-		response.sendRedirect("http://blog.scenedipity.com/?p="+id);
-	
-	else 
-		response.sendRedirect("http://www.scenedipity.com/"+url);
-	
-	
+	 	%></script><%
+	%></head><%
+	%><body><%
 }else{ // --- display splash page -----------------------------------------------------------------------------------------------
-%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
-	%><html xmlns="http://www.w3.org/1999/xhtml"><%
-		%><head><%
-			%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
-			%><title>scenedipity's url shortener</title><%
-			%><script type="text/javascript"><%
- 				 %>var _gaq = _gaq || [];<%
- 				 %>_gaq.push(['_trackPageview']);<%
- 				 %>(function() {<%
- 					 %>var ga = document.createElement('script');<%
- 					 %>ga.type = 'text/javascript'; ga.async = true;<%
- 					 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
- 					 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
-				 %>})();<%
-			 %></script><%
+			 %>_gaq.push(['_trackPageview']);<%
+	 		%></script><%
 		%></head><%
-	
 		%><body><%
 			
 			%><div id="toplinks"><%
@@ -218,7 +230,6 @@ if(url.length()>0){ // --- begin translation------------------------------------
 	 			%></ul><%
 	 			%> &copy; 2010 - 2011 Scenedipity, Inc.<%
  			%></div><%
-			
+}
 		%></body><%
-	%></html><%
-}%>
+	%></html>
