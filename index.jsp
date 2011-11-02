@@ -37,15 +37,12 @@ z - reserved
  
 %><%@ page import="java.util.*"%><%
 
-
 String url = request.getParameter("view");
 String id = request.getParameter("id");
 
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
 	%><html xmlns="http://www.w3.org/1999/xhtml"><%
 		%><head><%
-			%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
-			%><title>scenedipity's url shortener</title><%
 			%><script type="text/javascript"><%
  				 %>var _gaq = _gaq || [];<%
  				 %>(function() {<%
@@ -138,9 +135,12 @@ if(url.length()>0){ // --- begin translation------------------------------------
 	 	%></script><%
 	%></head><%
 	%><body><%
+	
 }else{ // --- display splash page -----------------------------------------------------------------------------------------------
 			 %>_gaq.push(['_trackPageview']);<%
 	 		%></script><%
+			%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
+			%><title>scenedipity's url shortener</title><%
 		%></head><%
 		%><body><%
 			
@@ -213,8 +213,7 @@ if(url.length()>0){ // --- begin translation------------------------------------
 							%><br/>Base58 representation  of current number of days since epoch: <font color="red"><%=cEpocDays%></font><%
 							
 					%></pre><%
-				%></p><%
-				
+				%></p><%		
 				
 				%><p><%
 					%><font color="red">* </font>Base58 is used to compress the checkin-date and the checkin-times using a mix of letters and numbers.<%
