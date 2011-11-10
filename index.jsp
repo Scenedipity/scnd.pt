@@ -41,12 +41,10 @@ String url = request.getParameter("view");
 String id = request.getParameter("id");
 
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
-<<<<<<< HEAD
 	%><html xmlns="http://www.w3.org/1999/xhtml"><%
 		%><head><%
 			%><script type="text/javascript"><%
  				 %>var _gaq = _gaq || [];<%
- 				 %>_gaq.push(['_setAccount', 'UA-22485363-2']);<%
  				 %>(function() {<%
  					 %>var ga = document.createElement('script');<%
  					 %>ga.type = 'text/javascript'; ga.async = true;<%
@@ -63,28 +61,6 @@ String id = request.getParameter("id");
 					 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
 					 %>window.location = "http://blog.scenedipity.com"+url;<%
 				 %>}<%
-=======
-%><html xmlns="http://www.w3.org/1999/xhtml"><%
-	%><head><%
-		%><script type="text/javascript"><%
-	 		 %>var _gaq = _gaq || [];<%
-	 		 %>(function() {<%
- 			 %>var ga = document.createElement('script');<%
- 			 %>ga.type = 'text/javascript'; ga.async = true;<%
- 			 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
- 			 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
-		 %>})();<%
-		 
-		 %>function forward(url){<%
-			 %>_gaq.push(['_trackPageview', url]);<%
-			 %>window.location = "http://www.scenedipity.com"+url;<%
-		 %>}<%
-		 
-		 %>function forwardBlog(url){<%
-			 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
-			 %>window.location = "http://blog.scenedipity.com"+url;<%
-		 %>}<%
->>>>>>> branch 'master' of git@github.com:androwis/scndp.it.git
 	
 // --- begin translation---------------------------------------------------------------------------------------
 if(url.length()>0){
