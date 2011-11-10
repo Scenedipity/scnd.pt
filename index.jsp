@@ -41,6 +41,7 @@ String url = request.getParameter("view");
 String id = request.getParameter("id");
 
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
+<<<<<<< HEAD
 	%><html xmlns="http://www.w3.org/1999/xhtml"><%
 		%><head><%
 			%><script type="text/javascript"><%
@@ -62,8 +63,31 @@ String id = request.getParameter("id");
 					 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
 					 %>window.location = "http://blog.scenedipity.com"+url;<%
 				 %>}<%
+=======
+%><html xmlns="http://www.w3.org/1999/xhtml"><%
+	%><head><%
+		%><script type="text/javascript"><%
+	 		 %>var _gaq = _gaq || [];<%
+	 		 %>(function() {<%
+ 			 %>var ga = document.createElement('script');<%
+ 			 %>ga.type = 'text/javascript'; ga.async = true;<%
+ 			 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
+ 			 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
+		 %>})();<%
+		 
+		 %>function forward(url){<%
+			 %>_gaq.push(['_trackPageview', url]);<%
+			 %>window.location = "http://www.scenedipity.com"+url;<%
+		 %>}<%
+		 
+		 %>function forwardBlog(url){<%
+			 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
+			 %>window.location = "http://blog.scenedipity.com"+url;<%
+		 %>}<%
+>>>>>>> branch 'master' of git@github.com:androwis/scndp.it.git
 	
-if(url.length()>0){ // --- begin translation---------------------------------------------------------------------------------------
+// --- begin translation---------------------------------------------------------------------------------------
+if(url.length()>0){
 	
 	%><%! // --- Functions ---------------------------------------------------v
 	public boolean check(String s, String id){
@@ -134,102 +158,106 @@ if(url.length()>0){ // --- begin translation------------------------------------
 		%>forward("/"+"<%=url%>");<%
 	}
 	 	%></script><%
-	%></head><%
-	%><body><%
-	
-}else{ // --- display splash page -----------------------------------------------------------------------------------------------
-			 %>_gaq.push(['_trackPageview']);<%
-	 		%></script><%
-			%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
-			%><title>scenedipity's url shortener</title><%
-		%></head><%
-		%><body><%
-			
-			%><div id="toplinks"><%
-				%><div class="bannerLeft"><%
-					%><div class="city">the internet's</div><%
-					%><div class="theScene"><h1><a href="http://www.scenedipity.com/">scenedipity</a></h1></div><%
-					%><div class="sketch"> url shrtnr <font class="beta">(beta)</font></div><%
-				%></div><%
-			 %></div><%
-		 	
-			 %><span class="message yellow"><%
-			 	%><font style="font-weight:bold">coming soon:</font><%
-			 	%> we plan on publishing an api, exposing our translation tables &amp; releasing <%
-			 	%><a href="http://scndp.it" alt="Scenedipity's URL shortener" style="font-size:inherit">scndp.it</a><%
-			 	%> for public use... <br/> <%
-		 	%></span><%
-	
-	 		%><p><%
-	 			%>Scenedipity provides an algorithmic <%
- 				%><a href="http://en.wikipedia.org/wiki/URL_shortening">url shortening</a><%
- 				%> service for checkins, menus, and profiles.<%
- 				%> Short urls can be useful in a variety of contexts including: email, on business cards, IM, text messages, or short status updates.<%
-				%></p><%
-				
-			%><p><%
-				%>Menus have a direct short url of the form:<%
-			%></p><%
-			
-			%><pre>http://scndp.it/{restaurant-username}</pre><%
-			
- 				%><p><%
-					%>Our blog entries have a short url of the form:<%
-			%></p><%
-			%><pre>http://scndp.it/b/{blog-entry-id}</pre><%
-				%><p>Checkins are a little trickier.  The general form always begins with : </p><%
-						%><pre><%
-							%>http://scndp.it/g <br/><%
-						%></pre><%
-										
-							long epocDays=calculateDays();
-							String cEpocDays=encode(epocDays);
-							String date = translate(epocDays);
-							String date0 = translate(epocDays-7);
-							
-							%><p>More importantly, these links have a mathematically calculated short url of the forms:</p><%
 
-							%><pre><%
-							%>http://scndp.it/g/{user-id} <br/><%
-							%><font color="blue">http://scenedipity.com/streets/username</font><%
-							%></pre><%
-							
-							%><p>This form returns all of the checkins for a given day:</p><%
-							%><pre><%
-							%>http://scndp.it/g/{checkin-date} <br/><%
-							%>http://scndp.it/g/</font><font color="blue"><%=cEpocDays %></font><%
-							%><br/><font color="#777"> resolves to </font><br/><%
-							%>http://scenedipity.com/streets/<font color="blue"><%=date%></font></pre><%
-						
-							
-							%><p>This form returns all of the checkins for a given day:</p><%
-								%><pre><%
-							%>http://scndp.it/g-{checkin-date}{user-id}<br/><%
-								%><font color="blue">http://scndp.it/streets/username/<%=date%> </font><br/><br/><%
+%></head><%
+%><body><%
 
-							%>http://scndp.it/g-{checkin-date}{checkout-date}<br/><%
-							%><font color="blue">http://scndp.it/streets/<%=date0%>/<%=date%> </font><br/><br/><%
-							
-							%>current number of days since epoch: <font color="red"><%=epocDays%></font><%
-							%><br/>Base58 representation  of current number of days since epoch: <font color="red"><%=cEpocDays%></font><%
-							
-					%></pre><%
-				%></p><%		
-				
-				%><p><%
-					%><font color="red">* </font>Base58 is used to compress the checkin-date and the checkin-times using a mix of letters and numbers.<%
-				%></p><%
-			 
-		 	%><div id="footer"><%
-		 		%><ul><%
-		 			%><li><a> art </a></li><%
-		 			%><li><a href="http://blog.scenedipity.com" rel="me" target="new">blog</a></li><%
-		 			%><li><a> business </a></li><%
-		 			%><li><a> create </a></li><%
-		 			%><li><a> develop </a></li><%
-	 			%></ul><%
-	 			%> &copy; 2010 - 2011 Scenedipity, Inc.<%
- 			%></div><%
+// --- display splash page -----------------------------------------------------------------------------------------------
+}else{
+	%>_gaq.push(['_trackPageview']);<%
+ 	%></script><%
+	%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
+	%><title>scenedipity's url shortener</title><%
+%></head><%
+
+%><body><%
+
+	%><div id="toplinks"><%
+		%><div class="bannerLeft"><%
+			%><div class="city">the internet's</div><%
+			%><div class="theScene"><h1><a href="http://www.scenedipity.com/">scenedipity</a></h1></div><%
+			%><div class="sketch"> url shrtnr <font class="beta">(beta)</font></div><%
+		%></div><%
+	 %></div><%
+ 	
+	 %><span class="message yellow"><%
+	 	%><font style="font-weight:bold">coming soon:</font><%
+	 	%> we plan on publishing an api, exposing our translation tables &amp; releasing <%
+	 	%><a href="http://scndp.it" alt="Scenedipity's URL shortener" style="font-size:inherit">scndp.it</a><%
+	 	%> for public use... <br/> <%
+ 	%></span><%
+
+ 	%><p><%
+ 		%>Scenedipity provides an algorithmic <%
+ 		%><a href="http://en.wikipedia.org/wiki/URL_shortening">url shortening</a><%
+ 		%> service for checkins, menus, and profiles.<%
+ 		%> Short urls can be useful in a variety of contexts including: email, on business cards, IM, text messages, or short status updates.<%
+	%></p><%
+		
+	%><p><%
+		%>Menus have a direct short url of the form:<%
+	%></p><%
+	
+	%><pre>http://scndp.it/{restaurant-username}</pre><%
+	
+ 	%><p><%
+		%>Our blog entries have a short url of the form:<%
+	%></p><%
+
+	%><pre>http://scndp.it/b/{blog-entry-id}</pre><%
+
+	%><p>Checkins are a little trickier.  The general form always begins with : </p><%
+	
+	%><pre> http://scndp.it/g <br/> </pre><%
+								
+	long epocDays=calculateDays();
+	String cEpocDays=encode(epocDays);
+	String date = translate(epocDays);
+	String date0 = translate(epocDays-7);
+	
+	%><p>More importantly, these links have a mathematically calculated short url of the forms:</p><%
+
+	%><pre><%
+		%>http://scndp.it/g/{user-id} <br/><%
+		%><font color="blue">http://scenedipity.com/streets/username</font><%
+	%></pre><%
+	
+	%><p>This form returns all of the checkins for a given day:</p><%
+	
+	%><pre><%
+		%>http://scndp.it/g/{checkin-date} <br/><%
+		%>http://scndp.it/g/</font><font color="blue"><%=cEpocDays %></font><%
+		%><br/><font color="#777"> resolves to </font><br/><%
+		%>http://scenedipity.com/streets/<font color="blue"><%=date%></font><%
+	%></pre><%
+
+	%><p>This form returns all of the checkins for a given day:</p><%
+		%><pre><%
+			%>http://scndp.it/g-{checkin-date}{user-id}<br/><%
+			%><font color="blue">http://scndp.it/streets/username/<%=date%> </font><br/><br/><%
+	
+			%>http://scndp.it/g-{checkin-date}{checkout-date}<br/><%
+			%><font color="blue">http://scndp.it/streets/<%=date0%>/<%=date%> </font><br/><br/><%
+		
+			%>current number of days since epoch: <font color="red"><%=epocDays%></font><%
+			%><br/>Base58 representation  of current number of days since epoch: <font color="red"><%=cEpocDays%></font><%				
+		%></pre><%
+	%></p><%		
+		
+	%><p><%
+		%><font color="red">* </font>Base58 is used to compress the checkin-date and the checkin-times using a mix of letters and numbers.<%
+	%></p><%
+	 
+ 	%><div id="footer"><%
+ 		%><ul><%
+ 			%><li><a> art </a></li><%
+ 			%><li><a href="http://blog.scenedipity.com" rel="me" target="new">blog</a></li><%
+ 			%><li><a> business </a></li><%
+ 			%><li><a> create </a></li><%
+ 			%><li><a> develop </a></li><%
+ 		%></ul><%
+ 		%> &copy; 2010 - 2011 Scenedipity, Inc.<%
+ 	%></div><%
 }
-		%></body><%
-	%></html>
+%></body><%
+%></html>
