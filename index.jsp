@@ -143,7 +143,7 @@ if(url.length()>0){
 }else{
 	%>_gaq.push(['_trackPageview']);<%
  	%></script><%
-	%><link href="css/style.css" rel="stylesheet" type="text/css" /><%
+	%><link href="http://scenedipity.com/css/style.css" rel="stylesheet" type="text/css" /><%
 	%><title>scenedipity's url shortener</title><%
 %></head><%
 
