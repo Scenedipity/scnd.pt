@@ -45,6 +45,7 @@ String id = request.getParameter("id");
 		%><head><%
 			%><script type="text/javascript"><%
  				 %>var _gaq = _gaq || [];<%
+ 				 %>_gaq.push(['_setAccount', 'UA-22485363-2']);<%
  				 %>(function() {<%
  					 %>var ga = document.createElement('script');<%
  					 %>ga.type = 'text/javascript'; ga.async = true;<%

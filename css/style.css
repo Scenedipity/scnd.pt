@@ -1,4 +1,4 @@
-body {background:white;margin:auto;overflow:auto;padding:6px;min-width: 480px; max-width:1024px}
+body {background:white;margin:auto;overflow:auto;padding:6px;min-width: 480px; max-width:1024px; border-top: solid #0Fa6C5 6px}
 #footer, #toplinks {float:left;padding: 2px;text-align: left;width:100%}
 .fb_reset{float:left; clear:both}
 a{font-size: small;text-decoration:none; color:#0Fa6C5; margin:0 3px}
