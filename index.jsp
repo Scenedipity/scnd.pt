@@ -227,13 +227,13 @@ if(url.length()>0){
 	 
  	%><div id="footer"><%
  		%><ul><%
+	 		%><li> &copy; 2011 Scenedipity, Inc.</li><%
  			%><li><a> art </a></li><%
  			%><li><a href="http://blog.scenedipity.com" rel="me" target="new">blog</a></li><%
  			%><li><a> business </a></li><%
  			%><li><a> create </a></li><%
  			%><li><a> develop </a></li><%
  		%></ul><%
- 		%> &copy; 2010 - 2011 Scenedipity, Inc.<%
  	%></div><%
 }
 %></body><%
