@@ -227,7 +227,7 @@ if(url.length()>0){
 	 
 	%><div id="footer"><%
 	%><ul><%		
-			%><li>&copy; <%= clock.getYear()%> Scenedipity<%
+			%><li>&copy; 2011 Scenedipity</li><%
 			//><li><a> art </a></li><%
 			%><li><a href="http://blog.scenedipity.com" rel="me" target="new">blog</a></li><%
 			//><li><a> business </a></li><%
