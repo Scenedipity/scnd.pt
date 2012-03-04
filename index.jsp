@@ -153,9 +153,9 @@ if(url.length()>0){
 %><body><%
 
 	%><div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
+		<div class="navbar-inner" style="margin-left:0;height: 24px;border-top:solid 3px #0FA6C5">
 		<div class="container">
-		<div class="span2" style="margin-left:0"><a href="/" class="brand" style="color:white; font-size:xx-large">scndp<span style="color:#0fa6c5">.</span>it</a></div>
+		<div class="span2"><a href="/" class="brand" style="color:white; font-size:xx-large">scen<span style="color:#0fa6c5">e</span>dipity</a></div>
 		</div></div></div></div><%
  	
 	 %><span class="message yellow"><%
