@@ -149,13 +149,11 @@ if(url.length()>0){
 
 %><body><%
 
-	%><div id="toplinks"><%
-		%><div class="bannerLeft"><%
-			%><div class="city">the internet's</div><%
-			%><div class="theScene"><h1><a href="http://www.scenedipity.com/">scenedipity</a></h1></div><%
-			%><div class="sketch"> url shrtnr <font class="beta">(beta)</font></div><%
-		%></div><%
-	 %></div><%
+	%><div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+		<div class="container">
+		<div class="span2" style="margin-left:0"><a href="/" class="brand" style="color:white; font-size:xx-large">scen<span style="color:#0fa6c5">e</span>dipity</a></div>
+		</div></div></div></div><%
  	
 	 %><span class="message yellow"><%
 	 	%><font style="font-weight:bold">coming soon:</font><%
@@ -225,17 +223,18 @@ if(url.length()>0){
 		%><font color="red">* </font>Base58 is used to compress the checkin-date and the checkin-times using a mix of letters and numbers.<%
 	%></p><%
 	 
-	%><div id="footer"><%
-	%><ul><%		
-			%><li>&copy; 2011 Scenedipity</li><%
-			//><li><a> art </a></li><%
-			%><li><a href="http://blog.scenedipity.com" rel="me" target="new">blog</a></li><%
-			//><li><a> business </a></li><%
-			//><li><a> create </a></li><%
-			%><li><a href="http://data.scenedipity.com" rel="me" target="new"> develop </a></li><%
-			%><li><a href="http://scndp.it" rel="me" target="new"> scndp.it </a></li><%
+	%><div class="span12 footer"><%
+		%><ul><%
+		%><li>&copy; 2012 Scenedipity</li><%
+		%><li><a href="/about-us" rel="me"> about </a></li><%
+		%><li><a href="http://blog.scenedipity.com" rel="me">blog</a></li><%
+		%><li><a href="http://data.scenedipity.com" rel="me"> developers </a></li><%
+		%><li><a href="/legal/privacy" rel="me"> privacy</a></li><%
+		%><li><a href="/services" rel="me"> services</a></li><%
+		%><li><a href="http://scndp.it" rel="me"> scndp.it </a></li><%
+		%><li><a href="/legal/terms-of-service" rel="me"> terms </a></li><%
 		%></ul><%
-%></div><%
+	%></div><%
 
 }
 %></body><%
