@@ -143,7 +143,10 @@ if(url.length()>0){
 }else{
 	%>_gaq.push(['_trackPageview']);<%
  	%></script><%
-	%><link href="http://scenedipity.com/css/style.css" rel="stylesheet" type="text/css" /><%
+ 	%><link href="http://scenedipity.com/css/bootstrap.css" rel="stylesheet"><%
+ 	%><link href="http://scenedipity.com/css/docs.css" rel="stylesheet"><%
+ 	%><link href="http://scenedipity.com/css/bootstrap-responsive.css" rel="stylesheet"><%
+ 	%><link href="http://scenedipity.com/css/style.css" rel="stylesheet" type="text/css" /><%
 	%><title>scenedipity's url shortener</title><%
 %></head><%
 
