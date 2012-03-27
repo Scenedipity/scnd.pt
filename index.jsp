@@ -39,30 +39,6 @@ z - reserved
 
 String url = request.getParameter("view");
 String id = request.getParameter("id");
-
-%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
-	%><html xmlns="http://www.w3.org/1999/xhtml"><%
-		%><head><%
-			%><script type="text/javascript"><%
- 				 %>var _gaq = _gaq || [];<%
- 				 %>_gaq.push(['_setAccount', 'UA-22485363-2']);<%
- 				 %>(function() {<%
- 					 %>var ga = document.createElement('script');<%
- 					 %>ga.type = 'text/javascript'; ga.async = true;<%
- 					 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
- 					 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
-				 %>})();<%
-				 
-				 %>function forward(url){<%
-					 %>_gaq.push(['_trackPageview', url]);<%
-					 %>window.location = "http://www.scenedipity.com"+url;<%
-				 %>}<%
-				 
-				 %>function forwardBlog(url){<%
-					 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
-					 %>window.location = "http://blog.scenedipity.com"+url;<%
-				 %>}<%
-	
 // --- begin translation---------------------------------------------------------------------------------------
 if(url.length()>0){
 	
@@ -116,31 +92,62 @@ if(url.length()>0){
 	%><%//--------------------------------------------------------------------^
 
 	if(check(url, "foodtrucks") || check(url,"streets")){
-		%>forward("/foodtrucks");<%
-	
+		response.setStatus(301);
+		response.setHeader( "Location", "http://www.scenedipity.com/foodtrucks" );
+		response.setHeader( "Connection", "close" );
 	}else if(check(url, "g")){
-			%>forward("/where-is/"+"<%=expand(id.substring(3,6))+
-						"/"+translate(
-							Long.parseLong(
-								expand(
-									id.substring(0,3)
-								)
-							)
-						)%>"<%
-			%>);<%
+		String urlEnd = "/where-is/"
+			+expand(id.substring(3,6))+
+		"/"+translate(
+			Long.parseLong(
+				expand(
+					id.substring(0,3)
+				)
+			)
+		);
+		response.setStatus(301);
+		response.setHeader( "Location", "http://www.scenedipity.com/"+urlEnd);
+		response.setHeader( "Connection", "close" );
 	
 	}else if(check(url,"b")){
-		%>forwardBlog("/?p="+"<%=id%>");<%
+		response.setStatus(301);
+		response.setHeader( "Location", "http://blog.scenedipity.com/?p="+id);
+		response.setHeader( "Connection", "close" );
 	}else{
-		%>forward("/"+"<%=url%>");<%
+		response.setStatus(301);
+		response.setHeader( "Location", "http://www.scenedipity.com/"+url);
+		response.setHeader( "Connection", "close" );
 	}
+
+
+// --- display splash page -----------------------------------------------------------------------------------------------
+}else{
+	%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
+		%><html xmlns="http://www.w3.org/1999/xhtml"><%
+			%><head><%
+				%><script type="text/javascript"><%
+	 				 %>var _gaq = _gaq || [];<%
+	 				 %>_gaq.push(['_setAccount', 'UA-22485363-2']);<%
+	 				 %>(function() {<%
+	 					 %>var ga = document.createElement('script');<%
+	 					 %>ga.type = 'text/javascript'; ga.async = true;<%
+	 					 %>ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<%
+	 					 %>var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<%
+					 %>})();<%
+					 
+					 %>function forward(url){<%
+						 %>_gaq.push(['_trackPageview', url]);<%
+						 %>window.location = "http://www.scenedipity.com"+url;<%
+					 %>}<%
+					 
+					 %>function forwardBlog(url){<%
+						 %>_gaq.push(['_trackPageview', "/blog"+url]);<%
+						 %>window.location = "http://blog.scenedipity.com"+url;<%
+					 %>}<%
 	 	%></script><%
 
 %></head><%
 %><body><%
-
-// --- display splash page -----------------------------------------------------------------------------------------------
-}else{
 	%>_gaq.push(['_trackPageview']);<%
  	%></script><%
  	%><link href="http://scenedipity.com/css/bootstrap.css" rel="stylesheet"><%
@@ -239,6 +246,6 @@ if(url.length()>0){
 		%></ul><%
 	%></div><%
 
-}
 %></body><%
-%></html>
+%></html><%
+}%>
