@@ -147,8 +147,6 @@ if(url.length()>0){
 
 %></head><%
 %><body><%
-	%>_gaq.push(['_trackPageview']);<%
- 	%></script><%
  	%><link href="http://scenedipity.com/css/bootstrap.css" rel="stylesheet"><%
  	%><link href="http://scenedipity.com/css/docs.css" rel="stylesheet"><%
  	%><link href="http://scenedipity.com/css/bootstrap-responsive.css" rel="stylesheet"><%
