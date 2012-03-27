@@ -119,7 +119,6 @@ if(url.length()>0){
 		response.setHeader( "Connection", "close" );
 	}
 
-
 // --- display splash page -----------------------------------------------------------------------------------------------
 }else{
 	%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><%
@@ -239,9 +238,10 @@ if(url.length()>0){
 		%><li><a href="/about-us" rel="me"> about </a></li><%
 		%><li><a href="http://blog.scenedipity.com" rel="me">blog</a></li><%
 		%><li><a href="http://data.scenedipity.com" rel="me"> developers </a></li><%
+		%><li><a href="http://github.scenedipity.com" rel="me"> open-source </a></li><%
 		%><li><a href="/legal/privacy" rel="me"> privacy</a></li><%
 		%><li><a href="/services" rel="me"> services</a></li><%
-		%><li><a href="http://scndp.it" rel="me"> scndp.it </a></li><%
+		%><li><a href="/" rel="me"> scndp.it </a></li><%
 		%><li><a href="/legal/terms-of-service" rel="me"> terms </a></li><%
 		%></ul><%
 	%></div><%
