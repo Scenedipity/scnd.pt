@@ -96,7 +96,7 @@ if(url.length()>0){
 		response.setHeader( "Location", "http://www.scenedipity.com/foodtrucks" );
 		response.setHeader( "Connection", "close" );
 	}else if(check(url, "g")){
-		String urlEnd = "/where-is/"
+		String urlEnd = "where-is/"
 			+expand(id.substring(3,6))+
 		"/"+translate(
 			Long.parseLong(
