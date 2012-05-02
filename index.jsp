@@ -90,11 +90,10 @@ if(url.length()>0){
 		return toReturn + temp.getDate()+"-"+(temp.getYear()-100);		
 			}
 	%><%//--------------------------------------------------------------------^
-
+	
+	response.setStatus(301);
 	if(check(url, "foodtrucks") || check(url,"streets")){
-		response.setStatus(301);
 		response.setHeader( "Location", "http://www.scenedipity.com/foodtrucks" );
-		response.setHeader( "Connection", "close" );
 	}else if(check(url, "g")){
 		String urlEnd = "where-is/"
 			+expand(id.substring(3,6))+
@@ -105,19 +104,13 @@ if(url.length()>0){
 				)
 			)
 		);
-		response.setStatus(301);
-		response.setHeader( "Location", "http://www.scenedipity.com/"+urlEnd);
-		response.setHeader( "Connection", "close" );
-	
+		response.setHeader( "Location", "http://www.scenedipity.com/"+urlEnd);	
 	}else if(check(url,"b")){
-		response.setStatus(301);
 		response.setHeader( "Location", "http://blog.scenedipity.com/?p="+id);
-		response.setHeader( "Connection", "close" );
 	}else{
-		response.setStatus(301);
 		response.setHeader( "Location", "http://www.scenedipity.com/"+url);
-		response.setHeader( "Connection", "close" );
 	}
+	response.setHeader( "Connection", "close" );
 
 // --- display splash page -----------------------------------------------------------------------------------------------
 }else{
